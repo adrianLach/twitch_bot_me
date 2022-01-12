@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "tmi.js": "^1.8.5"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  }
+}
