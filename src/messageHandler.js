@@ -2,7 +2,7 @@ const https = require('https')
 
 exports.messageHandler = (client, target, context, msg, self) => {
 
-    const commandName = msg.trim()
+    const commandName = msg.trim().toLowerCase()
 
     console.log(target)
     console.log(context)
@@ -16,8 +16,11 @@ exports.messageHandler = (client, target, context, msg, self) => {
         sendBotMsg(client, target, 'Hi Ich bin ein Bot lmao')
 
     if (commandName === '!adrian')
-        sendBotMsg(client, target, 'Adrian ist grade schwer beschäftigt mit wichter Arbeit. 💻')
+        sendBotMsg(client, target, 'Der liebe Adrian ist grade schwer beschäftigt mit wichter Arbeit. 💻')
         
+    if (commandName === '!skill')
+        sendBotMsg(client, target, 'Skill? Ne, davon habe ich noch nicht gehört. Kann man das essen?')
+
     if (commandName === '!spaß')
         sendBotMsg(client, target, 'Nein, wir haben hier keinen Spaß!')
     
@@ -42,7 +45,7 @@ function getRanked(lolName, client, target) {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-Riot-Token': 'RGAPI-b2ef75b8-ead2-4252-8f58-dbfbdd1b970c'
+            'X-Riot-Token': 'RGAPI-c73d94ea-b022-465e-bf7b-39b5a3e8ff8a'
         }
     } 
 
@@ -65,7 +68,7 @@ function getRanked(lolName, client, target) {
               method: 'GET',
               headers: {
                   'Content-Type': 'application/json',
-                  'X-Riot-Token': 'RGAPI-b2ef75b8-ead2-4252-8f58-dbfbdd1b970c'
+                  'X-Riot-Token': 'RGAPI-c73d94ea-b022-465e-bf7b-39b5a3e8ff8a'
               }
           }
 

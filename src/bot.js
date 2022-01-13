@@ -4,7 +4,7 @@ const tmi = require('tmi.js')
 const ops = {
     identity: {
         username: 'Nadari',
-        password: 'oauth:vekg5c1cvjt8yxmkrcyial5gs2sc2f'
+        password: ''
     },
     channels: [
         'Carivien',
@@ -16,7 +16,12 @@ const client = new tmi.client(ops)
 
 client.on('message', (target, context, msg, self) => {
 
-    mshHandler.messageHandler(client, target, context, msg, self)
+    try {
+        mshHandler.messageHandler(client, target, context, msg, self)
+    } catch (error) {
+        console.log(error)        
+    }
+
 
 })
 client.on('connected', (addr, port) => {
