@@ -19,10 +19,9 @@ client.on('message', (target, context, msg, self) => {
     try {
         mshHandler.messageHandler(client, target, context, msg, self)
     } catch (error) {
-        console.log(error)        
+        client.say(target, '## Upsi.. We got an Error here 🤖 ##')
+        console.log(error)
     }
-
-
 })
 client.on('connected', (addr, port) => {
     console.log(`* Connected to ${addr}:${port}`)

@@ -1,8 +1,9 @@
+const { exception } = require('console')
 const https = require('https')
 
 exports.messageHandler = (client, target, context, msg, self) => {
 
-    const commandName = msg.trim().toLowerCase()
+    const commandName = msg.split(' ')[0].trim().toLowerCase()
 
     console.log(target)
     console.log(context)
@@ -23,6 +24,9 @@ exports.messageHandler = (client, target, context, msg, self) => {
 
     if (commandName === '!spaß')
         sendBotMsg(client, target, 'Nein, wir haben hier keinen Spaß!')
+
+    if (commandName === '!bonk' && msg.split(' ')[1])
+        sendBotMsg(client, target, `@${msg.split(' ')[1].replace('@', '')}! Hier, nimm das! BOP `)
     
     if (commandName === '!rank') {
         if(target === '#nadari')
