@@ -26,7 +26,10 @@ exports.messageHandler = (client, target, context, msg, self) => {
         sendBotMsg(client, target, 'Nein, wir haben hier keinen Spaß!')
 
     if (commandName === '!bonk' && msg.split(' ')[1])
-        sendBotMsg(client, target, `@${msg.split(' ')[1].replace('@', '')}! Hier, nimm das! BOP `)
+        sendBotMsg(client, target, `@${msg.split(' ')[1].replace('@', '')}! Hier, nimm das! BOP`)
+
+    if (commandName === '!noob')
+        sendBotMsg(client, target, 'Omg soooooooo bad Kappa')
     
     if (commandName === '!rank') {
         if(target === '#nadari')
@@ -37,7 +40,7 @@ exports.messageHandler = (client, target, context, msg, self) => {
 }
 
 function sendBotMsg(client, target, msg) {
-    client.say(target, `[${msg}]`)
+    client.say(target, `[ ${msg} ]`)
 }
 
 function getRanked(lolName, client, target) {
@@ -49,7 +52,7 @@ function getRanked(lolName, client, target) {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-Riot-Token': 'RGAPI-c73d94ea-b022-465e-bf7b-39b5a3e8ff8a'
+            'X-Riot-Token': 'RGAPI-827c0643-5549-49d2-87b7-a87793c52c93'
         }
     } 
 
@@ -72,7 +75,7 @@ function getRanked(lolName, client, target) {
               method: 'GET',
               headers: {
                   'Content-Type': 'application/json',
-                  'X-Riot-Token': 'RGAPI-c73d94ea-b022-465e-bf7b-39b5a3e8ff8a'
+                  'X-Riot-Token': 'RGAPI-827c0643-5549-49d2-87b7-a87793c52c93'
               }
           }
 
